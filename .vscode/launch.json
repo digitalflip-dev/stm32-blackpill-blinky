@@ -1,0 +1,82 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "STLink debug",
+            "request": "launch",
+            "type": "cortex-debug",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceFolder}/target/thumbv7em-none-eabihf/debug/stm32-blackpill-blinky",
+            "svdFile": "${workspaceFolder}/STM32F411.svd",
+            "servertype": "stlink",
+            "serverArgs": [
+                "-s",
+                "-m",
+                "0",
+                "-k",
+                "--frequency",
+                "21000",
+            ],
+            "device": "STM32F411CE",
+            "runToEntryPoint": "main",
+            "armToolchainPath": "c:/ST/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/",
+            "preLaunchTask": "Build binary",
+        },
+        {
+            "name": "JLink debug",
+            "request": "launch",
+            "type": "cortex-debug",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceFolder}/target/thumbv7em-none-eabihf/debug/stm32-blackpill-blinky",
+            "svdFile": "${workspaceFolder}/STM32F411.svd",
+            "servertype": "jlink",
+            "device": "STM32F411CE",
+            "interface": "swd",
+            "runToEntryPoint": "main",
+            "preLaunchTask": "Build binary",
+            "swoConfig": {
+                "enabled": true,
+                "cpuFrequency": 100000000,
+                "swoFrequency": 4000000,
+                "source": "probe",
+                "decoders": [
+                    {
+                        "label": "ITM port 0 output",
+                        "type": "console",
+                        "port": 0,
+                        "showOnStartup": true,
+                        "encoding": "ascii"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "JLink attach",
+            "request": "attach",
+            "type": "cortex-debug",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceFolder}/target/thumbsv7em-none-eabihf/debug/stm32-blackpill-blinky",
+            "svdFile": "${workspaceFolder}/STM32F411.svd",
+            "servertype": "jlink",
+            "device": "STM32F411CE",
+            "interface": "swd",
+            "runToEntryPoint": "main",
+            "preLaunchTask": "Build binary",
+            "swoConfig": {
+                "enabled": true,
+                "cpuFrequency": 100000000,
+                "swoFrequency": 4000000,
+                "source": "probe",
+                "decoders": [
+                    {
+                        "label": "ITM port 0 output",
+                        "type": "console",
+                        "port": 0,
+                        "showOnStartup": true,
+                        "encoding": "ascii"
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "rust-analyzer.check.allTargets": false,
+    "rust-analyzer.cargo.target": "thumbv7em-none-eabihf",
+    //"cortex-debug.gdbPath": "c:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin/arm-none-eabi-gdb.exe",
+    //"cortex-debug.JLinkGDBServerPath": "c:/Program Files/SEGGER/JLink_V814/JLinkGDBServerCL.exe",
+    //"cortex-debug.stutilPath": "c:/stlink-1.8.0-win32/bin/st-util"
+}
